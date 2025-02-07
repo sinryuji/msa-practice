@@ -1,16 +1,12 @@
-package com.spring_cloud.eureka.client.auth;
+package com.spring_cloud.eureka.client.auth.service;
 
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.io.Decoder;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
-import java.time.Instant;
-import java.util.Base64;
 import java.util.Date;
 
 @Service
