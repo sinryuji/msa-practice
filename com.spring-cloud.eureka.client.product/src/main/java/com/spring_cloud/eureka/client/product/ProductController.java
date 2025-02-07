@@ -1,5 +1,6 @@
 package com.spring_cloud.eureka.client.product;
 
+import jakarta.ws.rs.Path;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +17,8 @@ public class ProductController {
     @Value("${message}")
     private String message;
 
-    @GetMapping("/product")
-    public String getProduct() {
-        return "Product info!!!!! From port : " + serverPort + " and Message : " + message;
+    @GetMapping("/product/{id}")
+    public String getProduct(@PathVariable int id) {
+        return "Product " + id + " info!!!!! From port : " + serverPort + " and Message : " + message;
     }
 }
