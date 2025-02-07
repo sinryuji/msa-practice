@@ -24,10 +24,11 @@ public class AuthConfig {
                 )
                 // 요청에 대한 접근 권한을 설정합니다.
                 .authorizeHttpRequests(authorize -> authorize
-                        // /auth/signIn 경로에 대한 접근을 허용합니다. 이 경로는 인증 없이 접근할 수 있습니다.
-                        .requestMatchers("/auth/**").permitAll()
-                        // 그 외의 모든 요청은 인증이 필요합니다.
-                        .anyRequest().authenticated()
+                                .anyRequest().permitAll()
+//                        // /auth/signIn 경로에 대한 접근을 허용합니다. 이 경로는 인증 없이 접근할 수 있습니다.
+//                        .requestMatchers("/auth/**").permitAll()
+//                        // 그 외의 모든 요청은 인증이 필요합니다.
+//                        .anyRequest().authenticated()
                 );
 
         // 설정된 보안 필터 체인을 반환합니다.

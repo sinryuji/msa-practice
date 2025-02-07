@@ -8,6 +8,19 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/msa
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+#        use_sql_comments: true
+#    hibernate:
+#      ddl-auto: update
 
 eureka:
   client:
