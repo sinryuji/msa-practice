@@ -2,15 +2,27 @@ server:
   port: 18080
 
 spring:
-  profiles:
-    active: native
+#  profiles:
+#    active: native
   application:
     name: config-server
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config-repo
+        git:
+          uri: git@github.com:sinryuji/spring-cloud-config-sample.git
+          default-label: main
+          ignoreLocalSshSettings: true
+          hostKey: AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
+          hostKeyAlgorithm: ecdsa-sha2-nistp256
+          privateKey: |
+            -----BEGIN EC PRIVATE KEY-----
+            MHcCAQEEICElV3XugUfCNW1DsX4nAsfHNh0GaJwwUZg2fqqb4dzMoAoGCCqGSM49
+            AwEHoUQDQgAEnE0c2JsIEHTcBJIIzFjUMWKvy8FWVHtkZheErMa6+WwV8UeU5rda
+            +8mUUOz2Kd4KeAXMOoidv5g+Fit+xxqsUg==
+            -----END EC PRIVATE KEY-----
+#        native:
+#          search-locations: classpath:/config-repo
 
 eureka:
   client:
